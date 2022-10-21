@@ -1,0 +1,1 @@
+# ble_gateway_dm_firmware_manifest
