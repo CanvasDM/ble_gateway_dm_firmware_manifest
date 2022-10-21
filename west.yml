@@ -1,0 +1,201 @@
+manifest:
+  remotes:
+    - name: CanvasDM
+      url-base: https://github.com/CanvasDM
+    - name: LairdCP
+      url-base: https://github.com/LairdCP
+
+  # Please add items below based on alphabetical order.
+  # These dependencies may need updating if new features are added to the firmware.
+  projects:
+    - name: app_source_file_template_module
+      path: modules/lib/laird_connect/app_source_file_template
+      revision: main
+      remote: CanvasDM
+    - name: Attributes
+      path: modules/lib/laird_connect/attributes
+      revision: main
+      remote: LairdCP
+    - name: ble_gateway_device_manager_module
+      path: modules/lib/laird_connect/ble_gateway_device_manager
+      revision: main
+      remote: CanvasDM
+    - name: ble_gateway_dm_firmware
+      revision: main
+      remote: CanvasDM
+    - name: cmake_functions_module
+      path: modules/lib/laird_connect/cmake_functions
+      revision: main
+      remote: CanvasDM
+    - name: jsmn_module
+      path: modules/lib/jsmn
+      revision: main
+      remote: CanvasDM
+    - name: lcz_hw_key_module
+      path: modules/lib/laird_connect/lcz_hw_key
+      revision: main
+      remote: CanvasDM
+    - name: lcz_lwm2m_ble_sensor_module
+      path: modules/lib/laird_connect/lcz_lwm2m_ble_sensor
+      revision: main
+      remote: CanvasDM
+    - name: lcz_lwm2m_util_module
+      path: modules/lib/laird_connect/lcz_lwm2m_util
+      revision: main
+      remote: CanvasDM
+    - name: lcz_mqtt_module
+      path: modules/lib/laird_connect/lcz_mqtt
+      revision: main
+      remote: CanvasDM
+    - name: locking_module
+      path: modules/lib/laird_connect/locking
+      revision: main
+      remote: CanvasDM
+    - name: lwm2m_client_module
+      path: modules/lib/laird_connect/lwm2m_client
+      revision: main
+      remote: CanvasDM
+    - name: lwm2m_file_system_management_module
+      path: modules/lib/laird_connect/lwm2m_file_system_management
+      revision: main
+      remote: CanvasDM
+    - name: lwm2m_connectivity_monitor_module
+      revision: main
+      path: modules/lib/laird_connect/lwm2m_connectivity_monitor
+      remote: CanvasDM
+    - name: lwm2m_ipso_current_module
+      path: modules/lib/laird_connect/lwm2m_ipso_current
+      revision: main
+      remote: CanvasDM
+    - name: lwm2m_ipso_pressure_module
+      path: modules/lib/laird_connect/lwm2m_ipso_pressure
+      revision: main
+      remote: CanvasDM
+    - name: lwm2m_ipso_fill_level_module
+      path: modules/lib/laird_connect/lwm2m_ipso_fill_level
+      revision: main
+      remote: CanvasDM
+    - name: lwm2m_ipso_temperature_module
+      path: modules/lib/laird_connect/lwm2m_ipso_temperature
+      revision: main
+      remote: CanvasDM
+    - name: lwm2m_firmware_update_module
+      path: modules/lib/laird_connect/lwm2m_firmware_update
+      revision: main
+      remote: CanvasDM
+    - name: lwm2m_gateway_obj_module
+      path: modules/lib/laird_connect/lwm2m_gateway_obj
+      revision: main
+      remote: CanvasDM
+    - name: lwm2m_gateway_proxy_module
+      path: modules/lib/laird_connect/lwm2m_gateway_proxy
+      revision: main
+      remote: CanvasDM
+    - name: lwm2m_ucifi_battery_module
+      path: modules/lib/laird_connect/lwm2m_ucifi_battery
+      revision: main
+      remote: CanvasDM
+    - name: lwm2m_lib_module
+      path: modules/lib/laird_connect/lwm2m_lib
+      revision: main
+      remote: CanvasDM
+    - name: lwm2m_software_management_module
+      path: modules/lib/laird_connect/lwm2m_software_management
+      revision: main
+      remote: CanvasDM
+    - name: memfault-firmware-sdk
+      path: modules/lib/memfault-firmware-sdk
+      revision: 0.33.4
+      remote: LairdCP
+    - name: modem_hl7800_module
+      path: modules/lib/laird_connect/modem_hl7800
+      revision: main
+      remote: CanvasDM
+    - name: network_monitor_module
+      path: modules/lib/laird_connect/network_monitor
+      revision: main
+      remote: CanvasDM
+    - name: pki_auth_module
+      path: modules/lib/laird_connect/pki_auth
+      revision: main
+      remote: CanvasDM
+    - name: power_module
+      path: modules/lib/laird_connect/power
+      revision: main
+      remote: CanvasDM
+    - name: sdk-nrf
+      path: nrf
+      revision: laird/ncs_2.1.0-1
+      remote: LairdCP
+      import:
+        # Please keep this list sorted alphabetically.
+        name-blocklist:
+          - Alexa-Gadgets-Embedded-Sample-Code
+          - canopennode
+          - cirrus
+          - civetweb
+          - connectedhomeip
+          - find-my
+          - hal_st
+          - homekit
+          - loramac-node
+          - lvgl
+          - matter
+          - mbed-cloud-client
+          - nrf-802154
+          - openthread
+          - sdk-lc3
+    - name: shell_login_module
+      path: modules/lib/laird_connect/shell_login
+      revision: main
+      remote: CanvasDM
+    - name: shell_script_runner_module
+      path: modules/lib/laird_connect/shell_script_runner
+      revision: main
+      remote: CanvasDM
+    - name: system_message_task_module
+      path: modules/lib/laird_connect/system_message_task
+      revision: main
+      remote: CanvasDM
+    - name: zephyr
+      revision: laird/ncs_2.1.0-1
+      remote: LairdCP
+      import:
+        # In addition to the zephyr repository itself, NCS also
+        # imports the contents of zephyr/west.yml.
+        # Only the projects explicitly named in the
+        # following whitelist are imported.
+        #
+        # Note that the zephyr west extensions (like 'build', 'flash',
+        # 'debug', etc.) are automatically provided by this import, so
+        # there's no need to add a redundant west-commands: key for
+        # the zephyr project.
+        #
+        # Please keep this list sorted alphabetically.
+        name-allowlist:
+          - cmsis
+          - fatfs
+          - hal_nordic
+          - libmetal
+          - littlefs
+          - mbedtls
+          - mcumgr
+          - mipi-sys-t
+          - net-tools
+          - nrf_hw_models
+          - open-amp
+          - openthread
+          - segger
+          - tinycrypt
+          - zcbor
+    - name: zephyr_lib
+      path: modules/lib/laird_connect/zephyr_lib
+      revision: main
+      remote: LairdCP
+    # Framework must be placed after all components
+    - name: zephyr_framework
+      path: modules/lib/laird_connect/framework
+      revision: main
+      remote: LairdCP
+  self:
+    path: ble_gateway_dm_firmware_public_manifest
