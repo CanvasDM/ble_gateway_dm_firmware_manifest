@@ -35,16 +35,16 @@ manifest:
       path: modules/lib/laird_connect/lcz_hw_key
       revision: main
       remote: CanvasDM
-    - name: lcz_lwm2m_ble_sensor_module
-      path: modules/lib/laird_connect/lcz_lwm2m_ble_sensor
-      revision: main
-      remote: CanvasDM
     - name: lcz_lwm2m_util_module
       path: modules/lib/laird_connect/lcz_lwm2m_util
       revision: main
       remote: CanvasDM
     - name: lcz_mqtt_module
       path: modules/lib/laird_connect/lcz_mqtt
+      revision: main
+      remote: CanvasDM
+    - name: lcz_sensor_telemetry_app_module
+      path: modules/lib/laird_connect/lcz_sensor_telemetry_app
       revision: main
       remote: CanvasDM
     - name: locking_module
@@ -93,10 +93,6 @@ manifest:
       remote: CanvasDM
     - name: lwm2m_ucifi_battery_module
       path: modules/lib/laird_connect/lwm2m_ucifi_battery
-      revision: main
-      remote: CanvasDM
-    - name: lwm2m_lib_module
-      path: modules/lib/laird_connect/lwm2m_lib
       revision: main
       remote: CanvasDM
     - name: lwm2m_software_management_module
