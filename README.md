@@ -4,6 +4,14 @@ This manifest repo will pull all the required firmware for the BLE Gateway DM Fi
 
 > **NOTE:** Customization process is required to enable all features of Laird Connectivity provided Canvas Device Management platform. Please [contact Laird Connectivity](https://www.lairdconnect.com/contact) if you require Canvas Device Management Services before you start development.
 
+## Required Hardware
+
+To program and/or debug the MG100 the following are required:
+- [Laird Connectivity USB-SWD Programmer](https://www.lairdconnect.com/wireless-modules/programming-kits/usb-swd-programming-kit)
+- [Tag-Connect Cable](https://www.tag-connect.com/product/tc2030-ctx-6-pin-cable-for-arm-cortex)
+
+If developing with the Pinnacle 100 or BL5340 DVKs, programming hardware is built into the boards.
+
 ## Cloning Firmware
 
 > **WARNING:** On Windows do not clone into a starting folder path longer than 12 characters or else the firmware will not build.
