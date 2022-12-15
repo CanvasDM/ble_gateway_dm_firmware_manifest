@@ -98,14 +98,16 @@ west build -p -b mg100 -d ble_gateway_dm_firmware/build/mg100 ble_gateway_dm_fir
 
 # Windows
 
-west build -p -b mg100 -d ble_gateway_dm_firmware/build/mg100 ble_gateway_dm_firmware -- -DAPP_TYPE=lwm2m \
+cd ble_gateway_dm_firmware
+
+west build -p -b mg100 -d build/mg100 -- -DAPP_TYPE=lwm2m \
 -Db0_CONFIG_DISABLE_FLASH_PATCH=y \
 -Dmcuboot_CONFIG_DISABLE_FLASH_PATCH=y \
 -DCONFIG_LCZ_APPROTECT_STARTUP=y \
 -DCONFIG_LCZ_APPROTECT_STARTUP_INIT_LEVEL=3 \
 -DCONFIG_LCZ_APPROTECT_STARTUP_INIT_PRIORITY=2 \
--DCONFIG_SB_SIGNING_KEY_FILE=\"%CD%/ble_gateway_dm_firmware/config/keys/debug_priv_a.pem\" \
--DCONFIG_SB_PUBLIC_KEY_FILES=\"%CD%/ble_gateway_dm_firmware/config/keys/debug_pub_b.pem,config/keys/debug_pub_c.pem\" \
+-DCONFIG_SB_SIGNING_KEY_FILE=\"config/keys/debug_priv_a.pem\" \
+-DCONFIG_SB_PUBLIC_KEY_FILES=\"config/keys/debug_pub_b.pem,config/keys/debug_pub_c.pem\" \
 -Dmcuboot_CONFIG_BOOT_SIGNATURE_TYPE_ECDSA_P256=y \
--Dmcuboot_CONFIG_BOOT_SIGNATURE_KEY_FILE=\\\"%CD%/ble_gateway_dm_firmware/config/keys/debug_priv_c.pem\\\"
+-Dmcuboot_CONFIG_BOOT_SIGNATURE_KEY_FILE=\\\"config/keys/debug_priv_c.pem\\\"
 ```
