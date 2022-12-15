@@ -2,6 +2,8 @@
 
 This manifest repo will pull all the required firmware for the BLE Gateway DM Firmware.
 
+> **NOTE:** Customization process is required to enable all features of Laird Connectivity provided Canvas Device Management platform. Please [contact Laird Connectivity](https://www.lairdconnect.com/contact) if you require Canvas Device Management Services before you start development.
+
 ## Cloning Firmware
 
 > **WARNING:** On Windows do not clone into a starting folder path longer than 12 characters or else the firmware will not build.
