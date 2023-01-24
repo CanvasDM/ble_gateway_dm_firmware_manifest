@@ -13,11 +13,7 @@ To clone this repository properly use the `west` tool. To install `west` you wil
 Install `west` using `pip3`:
 
 ```
-# Linux
 pip3 install --user -U west
-
-# macOS (Terminal) and Windows (cmd.exe)
-pip3 install -U west
 ```
 
 Once `west` is installed, clone this repository using `west init` and `west update`:
@@ -44,13 +40,13 @@ v0.14.2 of the Zephyr SDK is recommended for building the firmware.
 
 ## Building the Firmware
 
-> **WARNING:** Before building the firmware, be sure to install all python dependencies
+**All of the following commands assume starting from from the directory where you ran `west update`**
 
-From the directory where you ran `west update`, issue the following command:
+> **WARNING:** Before building the firmware, be sure to install all python dependencies with the following commands:
 
 ```
-# Linux, macOS and Windows
 pip3 install --user -r zephyr/scripts/requirements.txt
+pip3 install --user -r nrf/scripts/requirements.txt
 pip3 install --user -r modules/lib/laird_connect/attributes/generator/requirements.txt
 ```
 
@@ -75,27 +71,31 @@ The following command will use test keys in the repo to show how to build a secu
 ```
 # Linux, macOS
 
-west build -p -b mg100 -d ble_gateway_dm_firmware/build/mg100 ble_gateway_dm_firmware -- -DAPP_TYPE=lwm2m \
+west build -p -b mg100 -d ble_gateway_dm_firmware/build/mg100 ble_gateway_dm_firmware -- \
+-DAPP_TYPE=lwm2m \
 -Db0_CONFIG_DISABLE_FLASH_PATCH=y \
 -Dmcuboot_CONFIG_DISABLE_FLASH_PATCH=y \
 -DCONFIG_LCZ_APPROTECT_STARTUP=y \
 -DCONFIG_LCZ_APPROTECT_STARTUP_INIT_LEVEL=3 \
 -DCONFIG_LCZ_APPROTECT_STARTUP_INIT_PRIORITY=2 \
--DCONFIG_SB_SIGNING_KEY_FILE=\"${PWD}/ble_gateway_dm_firmware/config/keys/debug_priv_a.pem\" \
--DCONFIG_SB_PUBLIC_KEY_FILES=\"${PWD}/ble_gateway_dm_firmware/config/keys/debug_pub_b.pem,config/keys/debug_pub_c.pem\" \
+-DCONFIG_SB_SIGNING_KEY_FILE=\"config/keys/debug_priv_a.pem\" \
+-DCONFIG_SB_PUBLIC_KEY_FILES=\"config/keys/debug_pub_b.pem,config/keys/debug_pub_c.pem\" \
 -Dmcuboot_CONFIG_BOOT_SIGNATURE_TYPE_ECDSA_P256=y \
 -Dmcuboot_CONFIG_BOOT_SIGNATURE_KEY_FILE=\\\"${PWD}/ble_gateway_dm_firmware/config/keys/debug_priv_c.pem\\\"
 
-# Windows
+# Windows (cmd.exe)
 
-west build -p -b mg100 -d ble_gateway_dm_firmware/build/mg100 ble_gateway_dm_firmware -- -DAPP_TYPE=lwm2m \
--Db0_CONFIG_DISABLE_FLASH_PATCH=y \
--Dmcuboot_CONFIG_DISABLE_FLASH_PATCH=y \
--DCONFIG_LCZ_APPROTECT_STARTUP=y \
--DCONFIG_LCZ_APPROTECT_STARTUP_INIT_LEVEL=3 \
--DCONFIG_LCZ_APPROTECT_STARTUP_INIT_PRIORITY=2 \
--DCONFIG_SB_SIGNING_KEY_FILE=\"%CD%/ble_gateway_dm_firmware/config/keys/debug_priv_a.pem\" \
--DCONFIG_SB_PUBLIC_KEY_FILES=\"%CD%/ble_gateway_dm_firmware/config/keys/debug_pub_b.pem,config/keys/debug_pub_c.pem\" \
--Dmcuboot_CONFIG_BOOT_SIGNATURE_TYPE_ECDSA_P256=y \
--Dmcuboot_CONFIG_BOOT_SIGNATURE_KEY_FILE=\\\"%CD%/ble_gateway_dm_firmware/config/keys/debug_priv_c.pem\\\"
+set ws=%CD:\=/%
+
+west build -p -b mg100 -d ble_gateway_dm_firmware/build/mg100 ble_gateway_dm_firmware -- ^
+-DAPP_TYPE=lwm2m ^
+-Db0_CONFIG_DISABLE_FLASH_PATCH=y ^
+-Dmcuboot_CONFIG_DISABLE_FLASH_PATCH=y ^
+-DCONFIG_LCZ_APPROTECT_STARTUP=y ^
+-DCONFIG_LCZ_APPROTECT_STARTUP_INIT_LEVEL=3 ^
+-DCONFIG_LCZ_APPROTECT_STARTUP_INIT_PRIORITY=2 ^
+-DCONFIG_SB_SIGNING_KEY_FILE=\"config/keys/debug_priv_a.pem\" ^
+-DCONFIG_SB_PUBLIC_KEY_FILES=\"config/keys/debug_pub_b.pem,config/keys/debug_pub_c.pem\" ^
+-Dmcuboot_CONFIG_BOOT_SIGNATURE_TYPE_ECDSA_P256=y ^
+-Dmcuboot_CONFIG_BOOT_SIGNATURE_KEY_FILE=\\\"%ws%/ble_gateway_dm_firmware/config/keys/debug_priv_c.pem\\\"
 ```
