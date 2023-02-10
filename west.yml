@@ -21,7 +21,7 @@ manifest:
       revision: a32ef9ba2067027f278e53e2444c13d6297e548b
       remote: CanvasDM
     - name: ble_gateway_dm_firmware
-      revision: 61e53addce62c83f95b593595abc9ad13b06df80
+      revision: 5ca3cb1cee94843da38c2d37d3637ec046f602b8
       remote: CanvasDM
     - name: cmake_functions_module
       path: modules/lib/laird_connect/cmake_functions
@@ -41,11 +41,11 @@ manifest:
       remote: CanvasDM
     - name: lcz_mqtt_module
       path: modules/lib/laird_connect/lcz_mqtt
-      revision: 29a2fe1833e949a9ccc34efd14d2fb24b3925608
+      revision: 88bcd9ed819fd33b025a4d189b96b87ee08cbec0
       remote: CanvasDM
     - name: lcz_sensor_telemetry_app_module
       path: modules/lib/laird_connect/lcz_sensor_telemetry_app
-      revision: aac74384435ba0e1ae8fbf6a1a01178f2ef4ff45
+      revision: 4bb9b8fac7c966ed32be2d9e5b47b8f69f49a520
       remote: CanvasDM
     - name: locking_module
       path: modules/lib/laird_connect/locking
@@ -53,14 +53,14 @@ manifest:
       remote: CanvasDM
     - name: lwm2m_client_module
       path: modules/lib/laird_connect/lwm2m_client
-      revision: e3e23b37b1e51e1814b85843f1028834e0e67821
+      revision: 308a2a9511b8d5a72d9d5d055a59e1e06af2b8d6
       remote: CanvasDM
     - name: lwm2m_file_system_management_module
       path: modules/lib/laird_connect/lwm2m_file_system_management
       revision: 281da241a0ad397a1a53272c2fcc494707d9fc59
       remote: CanvasDM
     - name: lwm2m_connectivity_monitor_module
-      revision: 0d20229afd70d9683f9086b21ee23272849672f6
+      revision: cf6450fb797eb613eaebc484942dd684edbe9624
       path: modules/lib/laird_connect/lwm2m_connectivity_monitor
       remote: CanvasDM
     - name: lwm2m_ipso_current_module
@@ -89,7 +89,7 @@ manifest:
       remote: CanvasDM
     - name: lwm2m_gateway_proxy_module
       path: modules/lib/laird_connect/lwm2m_gateway_proxy
-      revision: 291cf853a5a8e37f56e68be4226e103391affa0f
+      revision: 2ca132f7e4f230e97a5da479b873e50b64dca44d
       remote: CanvasDM
     - name: lwm2m_ucifi_battery_module
       path: modules/lib/laird_connect/lwm2m_ucifi_battery
@@ -154,7 +154,7 @@ manifest:
       revision: 2b306a77a09df6037635d1e7bd3520729e8c1d44
       remote: CanvasDM
     - name: zephyr
-      revision: 5ad267bc152950d3d4df096b036818b47f52dd0f
+      revision: 0d75c808d0b6546b39602ab778ae16e39f2571fd
       remote: LairdCP
       import:
         # In addition to the zephyr repository itself, NCS also
