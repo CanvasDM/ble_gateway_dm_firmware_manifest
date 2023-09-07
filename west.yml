@@ -109,7 +109,7 @@ manifest:
       remote: CanvasDM
     - name: network_monitor_module
       path: modules/lib/laird_connect/network_monitor
-      revision: main
+      revision: ncs_2.1.0-1
       remote: CanvasDM
     - name: pki_auth_module
       path: modules/lib/laird_connect/pki_auth
@@ -186,7 +186,7 @@ manifest:
           - zcbor
     - name: zephyr_lib
       path: modules/lib/laird_connect/zephyr_lib
-      revision: main
+      revision: ncs_2.1.0-1
       remote: LairdCP
     # Framework must be placed after all components
     - name: zephyr_framework
